@@ -7,17 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CalculadoraComponent implements OnInit {
   titulo = 'Aplicación de Calculadora';
-  operandoA:number;
-  operandoB:number;
-  resultado:number;
+  resultadoCalculado:number;
   
   constructor() { }
 
   ngOnInit() {
   }
-  onSumar():void{
-    this.resultado = this.operandoA+this.operandoB;
-
+  onResultado(resultado:number)
+  {
+      this.resultadoCalculado = resultado;
   }
 
 }

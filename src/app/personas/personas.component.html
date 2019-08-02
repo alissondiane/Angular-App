@@ -1,19 +1,14 @@
 <div class="container">
-    <div class="row">
-        <div class="col">
-            <label>Nombre Persona:</label>
-            <input 
-            type="text"
-            class="form-control"
-            [(ngModel)]="tituloPersona"
-            >
-            {{tituloPersona}}
-            <h1>Listado de personas</h1>
-            <button class="btn btn-primary"
-            [disabled] = "!agregarPersona"
-            (click)="onCrearPersona()">Agregar Persona</button>
-            <p>{{agregarPersonaStatus}}</p>
-            <app-persona></app-persona>
-        </div>
+    
+    <div class="col-xs-12">
+        <h3>{{titulo}}</h3>
     </div>
+    <hr/>
+    <app-formulario></app-formulario>
+    <hr/>
+    <app-persona 
+    *ngFor="let personaElemento of personas; let i=index"
+    [persona]="personaElemento"
+    [indice]="i"
+    ></app-persona>
 </div>
