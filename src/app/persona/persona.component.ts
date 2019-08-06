@@ -15,7 +15,9 @@ export class PersonaComponent implements OnInit {
   apellidoPersona:string = "Perez";
   edad:number = 28;
 
- constructor(private personasService: PersonasService){}
+ constructor(private personasService: PersonasService){
+   
+ }
 
   ngOnInit() {
   }
