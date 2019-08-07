@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Persona } from '../persona.model';
 import { LoggingService } from '../LoggingService.service';
 import { PersonasService } from '../personas.service';
+import { Router } from '@angular/router';
 
 @Component({
     selector:'app-personas',
@@ -11,7 +12,6 @@ import { PersonasService } from '../personas.service';
 
 export class PersonasComponent implements OnInit{
 
-    titulo = "Listado de personas";
     agregarPersona=false;
 
     personaCreada=false;
@@ -21,7 +21,8 @@ export class PersonasComponent implements OnInit{
     personas : Persona[] = [];
   
     constructor(private loggingService: LoggingService,
-        private personasService: PersonasService){
+        private personasService: PersonasService,
+        private router: Router){
         /*
         setTimeout(
             () => {
@@ -41,6 +42,9 @@ export class PersonasComponent implements OnInit{
     }
     onModificarPersona(event:Event){
         this.tituloPersona = (<HTMLInputElement>event.target).value;
+    }
+    agregar(){
+        this.router.navigate(['personas/agregar']);
     }
     /*
     onPersonaAgregada(persona:Persona)
