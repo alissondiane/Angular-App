@@ -14,18 +14,23 @@ import { FormularioCalculadoraComponent } from './formulario-calculadora/formula
 import { FormularioLocalComponent } from './formulario-local/formulario-local.component';
 import { LoggingService } from './LoggingService.service';
 import { PersonasService } from './personas.service';
+import { ErrorComponent } from './error/error.component';
+import { DataServices } from './data.services';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
-    AppComponent,PersonasComponent, PersonaComponent, CalculadoraComponent, FormularioComponent, ResultadoComponent, FormularioCalculadoraComponent,FormularioLocalComponent
+    AppComponent,PersonasComponent, PersonaComponent, CalculadoraComponent, FormularioComponent, ResultadoComponent, FormularioCalculadoraComponent,FormularioLocalComponent, ErrorComponent
+    
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   //Para injectar un servicio a todos su componentes
-  providers: [LoggingService,PersonasService],
+  providers: [LoggingService,PersonasService,DataServices],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
